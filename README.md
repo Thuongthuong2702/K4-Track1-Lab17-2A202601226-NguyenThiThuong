@@ -93,19 +93,13 @@
 
 ---
 
-## 3.2. Lời mở đầu
-
-> Mình đang tìm hiểu cách mọi người thực sự học và xử lý những lúc gặp một phần khó hiểu trong bài học. Mình muốn nghe về một trải nghiệm thực tế gần đây của bạn, đặc biệt là bạn đã làm gì và chuyện gì xảy ra sau đó. Không có câu trả lời đúng hay sai; mình chủ yếu muốn hiểu cách bạn học và xử lý tình huống này trong thực tế.
-
----
-
-## 3.3. Story Opener
+## 3.2. Story Opener
 
 > Mình đang tìm hiểu cách mọi người thực sự học và xử lý những lúc gặp một phần khó hiểu trong bài học. Mình muốn nghe về một trải nghiệm thực tế gần đây của bạn, đặc biệt là bạn đã làm gì và trải nghiệm học tập của bạn ra sao.
 
 ---
 
-## 3.4. Big 3 Questions
+## 3.3. Big 3 Questions
 
 | **Điều cần học** | **Câu hỏi sẽ dùng** |
 | ---------------- | ------------------- |
