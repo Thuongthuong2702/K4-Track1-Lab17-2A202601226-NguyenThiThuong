@@ -133,7 +133,7 @@
 
 ### Nguyên tắc
 
-> Không hỏi user họ có thích solution hay không. Không mô tả nút, AI Tutor, diagnostic questions hoặc refresher.
+> Không hỏi user họ có thích solution hay không. Không mô tả giải , AI Tutor, diagnostic questions hoặc refresher.
 
 Tập trung vào:
 
@@ -184,3 +184,6 @@ AI được sử dụng để:
 
 ```text
 Solution → Change → Actor → Situation & Job → Pain → Evidence
+```
+### Review và điều chỉnh
+Đối với những trường hợp AI đưa ra thông tin chung chung, không sát với thông tin thực tế nhóm thu thập được, nhóm review và chỉnh sửa lại.
