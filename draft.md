@@ -121,7 +121,7 @@ Quy tắc: chỉ giữ mẫu **thời điểm chẩn đoán**, **một mẫu / m
 | Nhánh | Bộ lọc | Số gene | Kết quả |
 |---|---|---|---|
 | A | không lọc | 32.135 | **ma trận hỏng**: 76,0 % ô là NaN, 5/6 batch mất sạch, 951/1.252 BN không còn ô dùng được — pyComBat **không báo lỗi** |
-| **C** | **lọc trong từng cohort** | **12.058** | kNN 0,032; đối chứng dương 0,990; LOCO CR AUC 0,700 |
+| **B** | **lọc trong từng cohort** | **12.058** | kNN 0,032; đối chứng dương 0,990; LOCO CR AUC 0,700 |
 
 Cơ chế: gene có phương sai bằng 0 trong ít nhất một cohort ⇒ δ(g,b) không xác định; empirical Bayes gộp thông tin mọi gene trong cùng batch để ước lượng prior nên chỉ một nhóm gene không hữu hạn là hỏng prior của cả batch.
 
@@ -157,7 +157,7 @@ Cơ chế: gene có phương sai bằng 0 trong ít nhất một cohort ⇒ δ(g
 ### 3.2. BeatAML 2.0 — 698 → 456
 
 - Nguồn `BeatAML2_full.RData`
-- Lọc: `Initial Diagnosis` ∧ `isRelapse = FALSE` ∧ có trong `rnaCounts` → 458 mẫu / 456 BN; 2 BN có 2 mẫu chẩn đoán → giữ mẫu đầu tiên.
+- Lọc: `Initial Diagnosis` ∧ `isRelapse = FALSE` ∧ có trong `rnaCounts` → 458 mẫu / 456 BN; 2 BN có 2 mẫu chẩn đoán → giữ mẫu Bone Marrow Aspirate.
 - Batch: tách `BeatAML_w12` 301 / `BeatAML_w34` 155 theo cột `cohort` của `beataml_wv1to4_clinical.xlsx`, map qua `dbgap_rnaseq_sample`.
 
 ### 3.3. ClinSeq — 374 → 315
@@ -215,7 +215,7 @@ Mô tả quá trình tiền xử lý của nhánh dữ liệu Clinical + Mutatio
 | **Tên nhánh** | `BRANCH_MUT`|
 | **Tiêu chí vào nhánh** | `qc_has_mutation = True`|
 | **Ràng buộc mẫu** | mẫu tại **thời điểm chẩn đoán**, 1 dòng = 1 bệnh nhân, có **ít nhất một outcome** (OS hoặc CR) |
-| **Cỡ mẫu thực tế** | **5.064 bệnh nhân / 7 cohort**|
+| **Cỡ mẫu thực tế** | **5.078 bệnh nhân / 7 cohort**|
 
 ---
 
@@ -274,7 +274,7 @@ Format cuối là **bộ ba file**, nối bằng khoá `merged_id = <source_coho
 
 Cột: `merged_id`, `source_cohort`, `qc_has_rnaseq`, `qc_has_mutation`, `qc_has_cytogenetics`,
 `has_outcome`, `branch_MUT`, `branch_EXPR`, `branch_BOTH`, `qc_split`.
-Kết quả: **branch_MUT 5.064** · branch_EXPR 1.068 · branch_BOTH 1.068.
+Kết quả: **branch_MUT 5.078** · branch_EXPR 1.068 · branch_BOTH 1.068.
 `branch_EXPR` ở đây chỉ đếm bệnh nhân **trong 7 cohort này** có RNA-seq; các cohort chỉ có expression
 (GSE12417, GSE71014, GSE5122, GSE37642…) chưa gộp vào.
 
@@ -299,7 +299,7 @@ gain_chr8/11/13/21/22, loss_chrY).
 
 | Bước | Nội dung |
 |---|---|
-| B0 | Thu thập nguồn | ✓ |
+| B0 | Thu thập nguồn |
 | B1 | Đưa về 1 dòng = 1 bệnh nhân, **mẫu chẩn đoán** | 
 | B2 | Chuẩn hoá thuật ngữ cột gene → trường codebook | 
 | B3 | Mã hoá genotype 3 trạng thái + mask `assayed_` | 
